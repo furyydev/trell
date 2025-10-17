@@ -15,7 +15,17 @@ class Homepage extends StatelessWidget {
             fontSize: 18,
           ),
         ),
+        backgroundColor: Colors.white,
         centerTitle: true,
+
+        // elevation: 0,
+        leading: Container(
+          margin: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 114, 114, 114),
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
       ),
     );
   }
