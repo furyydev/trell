@@ -10,10 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Trell',
       debugShowCheckedModeBanner: false,
-      home: Homepage(),
+      theme: ThemeData(fontFamily: 'Poppins'),
+      home: const Homepage(),
     );
   }
 }
