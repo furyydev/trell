@@ -11,60 +11,60 @@ class Homepage extends StatelessWidget {
     return Scaffold(
       appBar: appBar(), // Upar wala part
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.only(top: 40, left: 20, right: 20),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Color(0xff000000).withOpacity(0.11),
-                  blurRadius: 40,
-                  spreadRadius: 0.0,
-                ),
-              ],
-            ),
-            child: TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                contentPadding: EdgeInsets.all(15),
-                hintText: 'Search Pizza',
-                hintStyle: TextStyle(color: Color(0xffDDDADA), fontSize: 14),
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: SvgPicture.asset('assets/icons/Search.svg'),
-                ),
-                suffixIcon: Container(
-                  width: 100,
-                  child: IntrinsicHeight(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        VerticalDivider(
-                          color: const Color.fromARGB(255, 219, 218, 218),
-                          indent: 12,
-                          endIndent: 12,
-                          thickness: 0.5,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8, right: 16),
-                          child: SvgPicture.asset('assets/icons/Filter.svg'),
-                        ),
-                      ],
-                    ),
+      body: Column(children: [_searchBar()]),
+    );
+  }
+
+  Container _searchBar() {
+    return Container(
+      margin: EdgeInsets.only(top: 40, left: 20, right: 20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xff000000).withOpacity(0.11),
+            blurRadius: 40,
+            spreadRadius: 0.0,
+          ),
+        ],
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: EdgeInsets.all(15),
+          hintText: 'Search Pizza',
+          hintStyle: TextStyle(color: Color(0xffDDDADA), fontSize: 14),
+          prefixIcon: Padding(
+            padding: const EdgeInsets.all(12),
+            child: SvgPicture.asset('assets/icons/Search.svg'),
+          ),
+          suffixIcon: Container(
+            width: 100,
+            child: IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  VerticalDivider(
+                    color: const Color.fromARGB(255, 219, 218, 218),
+                    indent: 12,
+                    endIndent: 12,
+                    thickness: 0.5,
                   ),
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide.none,
-                ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8, right: 16),
+                    child: SvgPicture.asset('assets/icons/Filter.svg'),
+                  ),
+                ],
               ),
             ),
           ),
-        ],
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide.none,
+          ),
+        ),
       ),
     );
   }
