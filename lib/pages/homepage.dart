@@ -6,21 +6,26 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Breakfast',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-          ),
-        ),
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        elevation: 0,
+    return Scaffold(appBar: appBar());
+  }
 
-        leading: Container(
+  AppBar appBar() {
+    return AppBar(
+      title: const Text(
+        'Breakfast',
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+          fontSize: 18,
+        ),
+      ),
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      elevation: 0,
+
+      leading: GestureDetector(
+        onTap: () {},
+        child: Container(
           margin: const EdgeInsets.all(12),
           alignment: Alignment.center,
           decoration: BoxDecoration(
@@ -33,9 +38,12 @@ class Homepage extends StatelessWidget {
             height: 24,
           ),
         ),
+      ),
 
-        actions: [
-          Container(
+      actions: [
+        GestureDetector(
+          onTap: () {},
+          child: Container(
             margin: const EdgeInsets.all(12),
             alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -48,24 +56,8 @@ class Homepage extends StatelessWidget {
               height: 5,
             ),
           ),
-        ],
-
-
-      ),
+        ),
+      ],
     );
-  }
-}
-
-class SearchBar extends StatefulWidget {
-  const SearchBar({super.key});
-
-  @override
-  State<SearchBar> createState() => _SearchBarState();
-}
-
-class _SearchBarState extends State<SearchBar> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
