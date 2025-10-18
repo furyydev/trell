@@ -9,7 +9,8 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      appBar: appBar(), // Upar wala part
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Container(
@@ -30,13 +31,31 @@ class Homepage extends StatelessWidget {
                 filled: true,
                 fillColor: Colors.white,
                 contentPadding: EdgeInsets.all(15),
+                hintText: 'Search Pizza',
+                hintStyle: TextStyle(color: Color(0xffDDDADA), fontSize: 14),
                 prefixIcon: Padding(
                   padding: const EdgeInsets.all(12),
                   child: SvgPicture.asset('assets/icons/Search.svg'),
                 ),
-                suffixIcon: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SvgPicture.asset('assets/icons/Filter.svg'),
+                suffixIcon: Container(
+                  width: 100,
+                  child: IntrinsicHeight(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        VerticalDivider(
+                          color: const Color.fromARGB(255, 219, 218, 218),
+                          indent: 12,
+                          endIndent: 12,
+                          thickness: 0.5,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8, right: 16),
+                          child: SvgPicture.asset('assets/icons/Filter.svg'),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
