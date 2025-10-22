@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Trell',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: const Homepage(),
+      home: Homepage(),
     );
   }
 }

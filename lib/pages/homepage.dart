@@ -1,17 +1,70 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:trell/models/categorymodels.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class Homepage extends StatefulWidget {
+  Homepage({super.key});
+
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  List<CategoryModel> categories = [];
+
+  void _getCategories() {
+    categories = CategoryModel.getCategories();
+  }
 
   @override
   Widget build(BuildContext context) {
+    _getCategories();
     return Scaffold(
       appBar: appBar(), // Upar wala part
       backgroundColor: Colors.white,
-      body: Column(children: [_searchBar()]),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _searchBar(),
+          SizedBox(height: 40),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  'Category',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              SizedBox(height: 15),
+              Container(
+                height: 120,
+                child: ListView.separated(
+                  itemCount: categories.length,
+                  scrollDirection: Axis.horizontal,
+                  separatorBuilder: (context, index) => SizedBox(width: 20),
+                  padding: EdgeInsets.only(left: 20, right: 20),
+                  itemBuilder: (context, index) {
+                    return Container(
+                      // height: 50,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        color: categories[index].boxColor.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 
@@ -23,6 +76,7 @@ class Homepage extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: Color(0xff000000).withOpacity(0.11),
             blurRadius: 40,
             spreadRadius: 0.0,
@@ -40,6 +94,7 @@ class Homepage extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             child: SvgPicture.asset('assets/icons/Search.svg'),
           ),
+          // ignore: sized_box_for_whitespace
           suffixIcon: Container(
             width: 100,
             child: IntrinsicHeight(
