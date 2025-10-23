@@ -160,19 +160,22 @@ MyApp
 
 ## 📱 Screenshots
 
-### Main App Interface
-![Trell App - Main Screen](screenshots/main-screen.png)
-*Clean, modern interface with search bar, categories, and diet recommendations*
+<div align="center">
+  <h3>🍽️ Main App Interface</h3>
+  <img src="screenshots/main-screen.png" width="300" alt="Trell App - Main Screen">
+  <p><em>Clean, modern interface with search bar, categories, and diet recommendations</em></p>
+  
+  <h3>🎯 App Features in Action</h3>
+  <img src="screenshots/features-screen.png" width="300" alt="Trell App - Features">
+  <p><em>Interactive category selection, diet recommendations, and popular recipes</em></p>
+</div>
 
-### App Features in Action
-![Trell App - Features](screenshots/features-screen.png)
-*Interactive category selection, diet recommendations, and popular recipes*
-
-The app features a clean, modern interface with:
-- Beautiful food category icons
-- Smooth scrolling lists
-- Interactive buttons and cards
-- Professional typography using Poppins font
+### ✨ Key Features Showcase
+- 🎨 **Beautiful food category icons** with smooth animations
+- 📱 **Responsive design** optimized for mobile devices  
+- 🎯 **Interactive buttons and cards** with gradient effects
+- 🔤 **Professional typography** using Poppins font family
+- 🌈 **Colorful UI elements** with food-themed color palette
 
 ## 🛠️ Development
 
