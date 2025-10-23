@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:trell/models/categorymodels.dart';
 import 'package:trell/models/dietmodels.dart';
+import 'package:trell/models/popularmodels.dart';
 
 class Homepage extends StatefulWidget {
   // ignore: prefer_const_constructors_in_immutables
@@ -14,6 +15,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   List<CategoryModel> categories = [];
   List<Dietmodels> diets = [];
+  List<Popularmodels> popular = [];
 
   void _getCategories() {
     categories = CategoryModel.getCategories();
@@ -23,26 +25,74 @@ class _HomepageState extends State<Homepage> {
     diets = Dietmodels.getDiet();
   }
 
+  void _getPopular() {
+    popular = Popularmodels.getPopular();
+  }
+
   void modelsInfo() {
     categories = CategoryModel.getCategories();
     diets = Dietmodels.getDiet();
+    popular = Popularmodels.getPopular();
   }
 
   @override
   Widget build(BuildContext context) {
     _getCategories();
     _getDiet();
+    _getPopular();
     return Scaffold(
       appBar: appBar(), // Upar wala part
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
         children: [
           _searchBar(),
           SizedBox(height: 40),
           _categorysection(),
           SizedBox(height: 40),
           _dietSection(),
+          SizedBox(height: 40),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  "Popular",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              SizedBox(height: 15),
+              // ignore: sized_box_for_whitespace
+              ListView.separated(
+                itemCount: popular.length,
+                shrinkWrap: true,
+                separatorBuilder: (context, index) => SizedBox(height: 20),
+                padding: EdgeInsets.only(left: 20, right: 20),
+                itemBuilder: (context, index) {
+                  return Container(
+                    height: 110,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xff1D1617).withOpacity(0.05),
+                          offset: Offset(0, 10),
+                          blurRadius: 40,
+                          spreadRadius: 0,
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+          SizedBox(height: 40),
         ],
       ),
     );
