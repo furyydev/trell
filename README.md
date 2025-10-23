@@ -160,6 +160,14 @@ MyApp
 
 ## 📱 Screenshots
 
+### Main App Interface
+![Trell App - Main Screen](screenshots/main-screen.png)
+*Clean, modern interface with search bar, categories, and diet recommendations*
+
+### App Features in Action
+![Trell App - Features](screenshots/features-screen.png)
+*Interactive category selection, diet recommendations, and popular recipes*
+
 The app features a clean, modern interface with:
 - Beautiful food category icons
 - Smooth scrolling lists
