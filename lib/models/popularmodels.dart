@@ -4,7 +4,7 @@ class Popularmodels {
   String level;
   String duration;
   String calories;
-  bool viewisSelected;
+  bool boxisSelected;
 
   Popularmodels({
     required this.name,
@@ -12,7 +12,7 @@ class Popularmodels {
     required this.level,
     required this.duration,
     required this.calories,
-    required this.viewisSelected,
+    required this.boxisSelected,
   });
 
   static List<Popularmodels> getPopular() {
@@ -24,7 +24,7 @@ class Popularmodels {
         level: 'Medium',
         duration: '30mins',
         calories: '230kCal',
-        viewisSelected: true,
+        boxisSelected: true,
       ),
     );
     populars.add(
@@ -34,7 +34,7 @@ class Popularmodels {
         level: 'Medium',
         duration: '20mins',
         calories: '120kCal',
-        viewisSelected: true,
+        boxisSelected: true,
       ),
     );
     return populars;

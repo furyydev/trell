@@ -76,7 +76,9 @@ class _HomepageState extends State<Homepage> {
                   return Container(
                     height: 110,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: popular[index].boxisSelected
+                          ? Colors.white
+                          : Colors.transparent,
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
@@ -84,6 +86,47 @@ class _HomepageState extends State<Homepage> {
                           offset: Offset(0, 10),
                           blurRadius: 40,
                           spreadRadius: 0,
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SvgPicture.asset(
+                          popular[index].iconPath,
+                          width: 55,
+                          height: 55,
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              popular[index].name,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Text(
+                              "${popular[index].level} | ${popular[index].duration} | ${popular[index].calories}",
+                              style: TextStyle(
+                                color: Color(0xff7B6F72),
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            // TBD
+                          },
+                          child: SvgPicture.asset(
+                            'assets/icons/button.svg',
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
                       ],
                     ),
