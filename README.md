@@ -196,8 +196,10 @@ Feel free to fork this project and submit pull requests for any improvements.
 
 ## 📞 Contact
 
+furynft07@outlook.com
 Created as a learning project for Flutter UI development.
 
 ---
+
 
 **Note**: This project was originally designed in Figma and then implemented in Flutter to learn UI development basics. The design focuses on clean, modern aesthetics with a food-themed color scheme and intuitive user experience. **This project was built entirely from scratch without any AI assistance - all code, design, and implementation was done manually.** 
