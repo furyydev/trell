@@ -51,93 +51,98 @@ class _HomepageState extends State<Homepage> {
           SizedBox(height: 40),
           _dietSection(),
           SizedBox(height: 40),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: Text(
-                  "Popular",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              SizedBox(height: 15),
-              // ignore: sized_box_for_whitespace
-              ListView.separated(
-                itemCount: popular.length,
-                shrinkWrap: true,
-                separatorBuilder: (context, index) => SizedBox(height: 20),
-                padding: EdgeInsets.only(left: 20, right: 20),
-                itemBuilder: (context, index) {
-                  return Container(
-                    height: 110,
-                    decoration: BoxDecoration(
-                      color: popular[index].boxisSelected
-                          ? Colors.white
-                          : Colors.transparent,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xff1D1617).withOpacity(0.05),
-                          offset: Offset(0, 10),
-                          blurRadius: 40,
-                          spreadRadius: 0,
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        SvgPicture.asset(
-                          popular[index].iconPath,
-                          width: 55,
-                          height: 55,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              popular[index].name,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            Text(
-                              "${popular[index].level} | ${popular[index].duration} | ${popular[index].calories}",
-                              style: TextStyle(
-                                color: Color(0xff7B6F72),
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            // TBD
-                          },
-                          child: SvgPicture.asset(
-                            'assets/icons/button.svg',
-                            width: 30,
-                            height: 30,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
+          _popularsection(),
           SizedBox(height: 40),
+          // Poject ends here
         ],
       ),
+    );
+  }
+
+  Column _popularsection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Text(
+            "Popular",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+        SizedBox(height: 15),
+        // ignore: sized_box_for_whitespace
+        ListView.separated(
+          itemCount: popular.length,
+          shrinkWrap: true,
+          separatorBuilder: (context, index) => SizedBox(height: 20),
+          padding: EdgeInsets.only(left: 20, right: 20),
+          itemBuilder: (context, index) {
+            return Container(
+              height: 110,
+              decoration: BoxDecoration(
+                color: popular[index].boxisSelected
+                    ? Colors.white
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xff1D1617).withOpacity(0.05),
+                    offset: Offset(0, 10),
+                    blurRadius: 40,
+                    spreadRadius: 0,
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SvgPicture.asset(
+                    popular[index].iconPath,
+                    width: 55,
+                    height: 55,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        popular[index].name,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text(
+                        "${popular[index].level} | ${popular[index].duration} | ${popular[index].calories}",
+                        style: TextStyle(
+                          color: Color(0xff7B6F72),
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // TBD
+                    },
+                    child: SvgPicture.asset(
+                      'assets/icons/button.svg',
+                      width: 30,
+                      height: 30,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ],
     );
   }
 
