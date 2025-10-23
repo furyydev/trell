@@ -78,7 +78,8 @@ class _HomepageState extends State<Homepage> {
         // ignore: sized_box_for_whitespace
         ListView.separated(
           itemCount: popular.length,
-          shrinkWrap: true,
+          // shrinkWrap: true,
+          
           separatorBuilder: (context, index) => SizedBox(height: 20),
           padding: EdgeInsets.only(left: 20, right: 20),
           itemBuilder: (context, index) {
