@@ -154,7 +154,7 @@ class _HomepageState extends State<Homepage> {
         Padding(
           padding: const EdgeInsets.only(left: 20),
           child: Text(
-            'Recomendations\nfor Diet',
+            'Meal Recommendations\nfor Diet',
             style: TextStyle(
               color: Colors.black,
               fontSize: 18,
